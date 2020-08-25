@@ -7,7 +7,6 @@ const Home = () => {
 	const [data, setData] = useState(8);
 
 	const increase = value => {
-		console.log(value);
 		setData(data + 1);
 	};
 

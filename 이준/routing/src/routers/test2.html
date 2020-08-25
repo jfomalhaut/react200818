@@ -1,0 +1,28 @@
+<html>
+<head>
+
+</head>
+<body>
+	<script>
+
+		var player = {
+			id: 1,
+			name: 'Kobe',
+			dead: '2020-08-25',
+			child: {
+				first: 'Lili',
+				second: 'brown'
+			}
+		};
+
+		test(player);
+
+		function test({ name, child: { first, second } }) {
+			console.log(name);
+			console.log(first);
+			console.log(second);
+		}
+
+	</script>
+</body>
+</html>

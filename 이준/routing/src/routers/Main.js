@@ -1,8 +1,9 @@
 import React from 'react';
 
-const Main = () => {
+const Main = ({ match: { params: { name } } }) => {
+	
 	return (
-		<h1>Main Page</h1>
+		<h1>Main Page value: {name}</h1>
 	);
 };
 

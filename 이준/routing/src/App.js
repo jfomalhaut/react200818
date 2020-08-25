@@ -11,7 +11,7 @@ const App = () => {
 			<Navigation />
 			<Switch>
 				<Route path="/home" component={Home} exact />
-				<Route path="/main" component={Main}></Route>?
+				<Route path="/main/:name" component={Main}></Route>?
 				<Route path="/list" component={List}></Route>?
 				<Redirect path="*" to="/home" />
 			</Switch>
