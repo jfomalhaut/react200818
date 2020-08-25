@@ -2,7 +2,9 @@ import React from 'react';
 
 const List = () => {
 	return (
-		<h1>List Component</h1>
+		<div className="container">
+			{'fruit'}
+		</div>
 	);
 };
 
