@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ITEMS from '../jsons/items.json';
+const nf = new Intl.NumberFormat();
 
 const List = ({ match: { params: { category } } }) => {
 	const [items, setItems] = useState([]);
@@ -15,6 +16,13 @@ const List = ({ match: { params: { category } } }) => {
 			case 'fish': return 1;
 			case 'fruit': return 2;
 			case 'vegetable': return 3;
+		}
+	};
+	const transType = (type) => {
+		switch(type) {
+			case 1 : return '수산물';
+			case 2 : return '청과';
+			case 3 : return '야채';
 		}
 	};
 
@@ -36,10 +44,12 @@ const List = ({ match: { params: { category } } }) => {
 					<div className="item">
 						<div className={`img color${item.type}`}></div>
 						<div className="info">
-							<span className="type border1">{item.type}</span>
-							<span className="name">{item.name}</span>
+							<div className="top">
+								<span className={`type border${item.type}`}>{transType(item.type)}</span>
+								<span className="name">{item.name}</span>
+							</div>
+							<div className="price">{nf.format(item.price)}원</div>
 						</div>
-						<div className="price">{item.price}원</div>
 					</div>
 				))}
 			</div>
