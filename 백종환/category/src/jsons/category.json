@@ -1,0 +1,22 @@
+[
+	{
+		"id": 0,
+		"path": "all",
+		"label": "전체보기"
+	},
+	{
+		"id": 1,
+		"path": "fish",
+		"label": "수산물"
+	},
+	{
+		"id": 2,
+		"path": "fruit",
+		"label": "청과"
+	},
+	{
+		"id": 3,
+		"path": "vegetable",
+		"label": "야채"
+	}
+]
