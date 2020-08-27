@@ -1,0 +1,40 @@
+.container {
+	margin: 100px;
+}
+
+input {
+	padding: 10px;
+	font-size: 30px;
+}
+
+button {
+	font-size: 30px;
+	padding: 9px 15px;
+}
+
+.jusoList{ 
+	width: 800px;
+}
+
+.item {
+	display: flex;
+	padding: 20px 10px;
+	border-bottom: 1px solid #ddd;
+}
+.item:hover {
+	background: #f9f9f9;
+}
+
+.item .juso {
+	line-height: 25px;
+	font-size: 20px;
+}
+
+.zipNo {
+	font-size: 18px;
+	color: blue;
+	width: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
