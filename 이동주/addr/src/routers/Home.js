@@ -24,11 +24,12 @@ const Home = () => {
             alert('검색어를 입력하세요');
             return;
         }
-       onSearch();
+       onSearch(1);
+       setCurrentPage(1);
     };
 
-    const onSearch = () => {
-        Axios.get(`${REQUEST_URL}?confmKey=${JUSO_APIKEY}&currentPage=${currentPage}&countPerPage=${VIEW}&resultType=json&keyword=${keyword}`).then(res => {
+    const onSearch = (curPg) => {
+        Axios.get(`${REQUEST_URL}?confmKey=${JUSO_APIKEY}&currentPage=${curPg}&countPerPage=${VIEW}&resultType=json&keyword=${keyword}`).then(res => {
             const { data : { results: { common: { totalCount }, juso } } } = res;
             setTotal(totalCount);
             setJusoList(juso);
@@ -54,7 +55,7 @@ const Home = () => {
     
     useEffect(() => {
         if (keyword !== ''){
-            onSearch();
+            onSearch(currentPage);
         } 
     }, [currentPage]);
    
@@ -77,8 +78,16 @@ const Home = () => {
                 
             </div>
             <div className="btns">
-                    <button onClick={prev}>이전</button>
-                    <button onClick={next}>다음</button>
+            
+            {currentPage !== 1 ? (
+                <button onClick={prev}>이전</button>
+            ) : null}
+
+
+            {(VIEW * currentPage) < total ? (
+                 <button onClick={next}>다음</button>
+            ) : null}     
+                   
             </div>
         </div>
     );
