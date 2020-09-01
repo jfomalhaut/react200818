@@ -30,9 +30,6 @@ const Home = () => {
 			const { data: { results: { common: { totalCount }, juso } } } = res;
 			setTotal(totalCount);
 			setJusoList(juso);
-			// if (totalCount !== '0') {
-			// 	setKeyword('');
-			// }
 		});
 	}
 
@@ -54,11 +51,21 @@ const Home = () => {
 		}
 	}, [currentPage]);
 
+
+
+
+	// useEffect(() => {
+	// 	window.addEventListener('scroll', onScroll);
+	// 	return () => {
+	// 		window.removeEventListener('scroll', onScroll);
+	// 	}
+	// }, []);
+
 	return (
 		<div className="container">
 			<input value={keyword} onChange={onChangeKeyword} onKeyPress={onKeyPressKeyword} />
 			<button onClick={search}>검색</button>
-			<h1>keyword value: {keyword}</h1>
+			<h1>'{keyword}'에 대한 검색 결과</h1>
 			<h1 style={{ color: 'red'}}>TOTAL: {total}개</h1>
 			<div className="jusoList">
 				{jusoList.map((item, index) => (
