@@ -27,12 +27,13 @@ const Home = () => {
 	};
 
 	const onSearch = (curPg) => {
+		console.log(curPg);
 		Axios.get(`${REQUEST_URL}?confmKey=${JUSO_APIKEY}&currentPage=${curPg}&countPerPage=${VIEW}&resultType=json&keyword=${keyword}`).then(res => {
 			const { data: { results: { common: { totalCount }, juso } } } = res;
 			setTotal(totalCount);
 			setJusoList(juso);
 		});
-	}
+	};
 
 	const onKeyPressKeyword = ev => {
 		if (ev.key === 'Enter') {
