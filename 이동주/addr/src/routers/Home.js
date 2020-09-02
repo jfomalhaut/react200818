@@ -83,7 +83,6 @@ const Home = () => {
                 <button onClick={prev}>이전</button>
             ) : null}
 
-
             {(VIEW * currentPage) < total ? (
                  <button onClick={next}>다음</button>
             ) : null}     
