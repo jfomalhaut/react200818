@@ -1,16 +1,20 @@
 .item {
 	position: relative;
 	border: 1px solid #ddd;
-	box-shadow: 0 0 15px rgba(0,0,0, .2);
+	box-shadow: 5px 5px 15px rgba(0,0,0, .2);
 }
 .info {
 	padding: 10px;
+	line-height: 25px;
+	font-size: 20px;
 }
 button {
 	width: 100%;
 	text-align: center;
-	padding: 5px 0;
+	padding: 10px 0;
+	font-size: 20px;
 	border: none;
+	border: 1px solid #ddd;
 	outline: none;
 	user-select: none;
 }
