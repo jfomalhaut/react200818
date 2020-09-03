@@ -1,0 +1,18 @@
+.checkbox {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #ddd;
+	position: relative;
+	margin-bottom: 50px;
+}
+
+.checked:after {
+	content: "";
+	position: absolute;
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%);
+	width: 6px;
+	height: 6px;
+	background: blue;
+}
