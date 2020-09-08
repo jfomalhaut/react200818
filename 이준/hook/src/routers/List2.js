@@ -1,29 +1,32 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './List2.css';
 import Card from '../components/Card';
+import useInput from '../customs/useInput';
 
 const List2 = () => {
 	const [phoneBook, setPhoneBook] = useState([]);
-	const [name, setName] = useState("");
-	const [age, setAge] = useState("");
-	const [phone, setPhone] = useState("");
 	const [focus, setFocus] = useState(false);
 	const nameRef = useRef();
+	
+	//useInputs
+	const [name, setName] = useInput("");
+	const [age, setAge] = useInput("");
+	const [phone, setPhone] = useInput("");
 
-	const onChangeName = ev => {
-		const { target: { value } } = ev;
-		setName(value);
-	};
+	// const onChangeName = ev => {
+	// 	const { target: { value } } = ev;
+	// 	setName(value);
+	// };
 
-	const onChangeAge = ev => {
-		const { target: { value } } = ev;
-		setAge(value);
-	};
+	// const onChangeAge = ev => {
+	// 	const { target: { value } } = ev;
+	// 	setAge(value);
+	// };
 
-	const onChangePhone = ev => {
-		const { target: { value } } = ev;
-		setPhone(value);
-	};
+	// const onChangePhone = ev => {
+	// 	const { target: { value } } = ev;
+	// 	setPhone(value);
+	// };
 
 	const addPhoneNumber = () => {
 		if (name === '' || age === '' || phone === '') {
@@ -71,13 +74,13 @@ const List2 = () => {
 		<div className="container">
 			<div className="field">
 				<div>
-					<input onFocus={() => setFocus(true)} value={name} ref={nameRef} onChange={onChangeName} placeholder="name" />
+					<input onFocus={() => setFocus(true)} value={name} ref={nameRef} onChange={setName} placeholder="name" />
 				</div>
 				<div>
-					<input onFocus={() => setFocus(true)} value={age} onChange={onChangeAge} placeholder="age" />
+					<input onFocus={() => setFocus(true)} value={age} onChange={setAge} placeholder="age" />
 				</div>
 				<div>
-					<input onFocus={() => setFocus(true)} value={phone} onChange={onChangePhone} placeholder="phoneNumber" />
+					<input onFocus={() => setFocus(true)} value={phone} onChange={setPhone} placeholder="phoneNumber" />
 				</div>
 				<button onClick={addPhoneNumber}>입력..</button>
 			</div>

@@ -1,0 +1,37 @@
+<html>
+<body>
+	<script>
+		var list = [1, 2, 3, 4];
+		var newList = list.concat();
+		var newList2 = list.map(item => {
+			if (item === 3) {
+				return 30;
+			} else {
+				return item;
+			}
+		});
+
+		var newListPie = list.map(item => item * 3.14);
+
+		var newList3 = list.filter(item => item !== 2);
+
+		var item = {
+			id: 1,
+			name: 'DJ',
+			age: 33,
+			size: '2cm'
+		};
+
+		var addStatus = {
+			height: '181cm',
+			weight: '80kg'
+		};
+
+		var total = {...item, ...addStatus, size: '5px' };
+
+		console.log(total);
+
+	</script>
+</body>
+
+</html>

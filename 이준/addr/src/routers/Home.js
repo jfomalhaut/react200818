@@ -85,8 +85,9 @@ const Home = () => {
 			{currentPage !== 1 ? (
 				<button onClick={prev}>이전</button>
 			) : null}
-
-			<button onClick={next}>다음</button>
+			{total > (VIEW * currentPage) ? (
+				<button onClick={next}>다음</button>
+			) : null}
 		</div>
 	);
 };
