@@ -1,27 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './List2.css';
+import useInput from '../coustoms/useInput';
 
 const List2 = () => {
 	const [phoneBook, setPhoneBook] = useState([]);
-	const [name, setName] = useState("");
-	const [age, setAge] = useState("");
-	const [phoneNumber, setPhoneNumber] = useState("");
+	const [name, setName] = useInput("");
+	const [age, setAge] = useInput("");
+	const [phoneNumber, setPhoneNumber] = useInput("");
 	const nameRef = useRef();
 
-	const onChangeName = (ev) => {
-		const { target: {value} } = ev;
-		setName(value);
-	};
+	// const onChangeName = (ev) => {
+	// 	const { target: {value} } = ev;
+	// 	setName(value);
+	// };
 
-	const onChangeAge = (ev) => {
-		const { target: {value} } = ev;
-		setAge(value);
-	};
+	// const onChangeAge = (ev) => {
+	// 	const { target: {value} } = ev;
+	// 	setAge(value);
+	// };
 
-	const onChangePhoneNumber = (ev) => {
-		const { target: {value} } = ev;
-		setPhoneNumber(value);
-	};
+	// const onChangePhoneNumber = (ev) => {
+	// 	const { target: {value} } = ev;
+	// 	setPhoneNumber(value);
+	// };
 
 	const addItem = () => {
 		if (name && age && phoneNumber) {
@@ -33,9 +34,9 @@ const List2 = () => {
 			const after = phoneBook.concat(data).reverse();
 			setPhoneBook(after);
 
-			setName('');
-			setAge('');
-			setPhoneNumber('');
+			// setName('');
+			// setAge('');
+			// setPhoneNumber('');
 			nameRef.current.focus();
 		} else {
 			alert('값을 입력해주세요');
@@ -71,13 +72,13 @@ const List2 = () => {
 		<div className="container">
 			<div className="field">
 				<div>
-					<input value={name} ref={nameRef} onChange={onChangeName} onKeyPress={appKeyPress} placeholder="name" />
+					<input value={name} ref={nameRef} onChange={setName} onKeyPress={appKeyPress} placeholder="name" />
 				</div>
 				<div>
-					<input value={age} onChange={onChangeAge} onKeyPress={appKeyPress} placeholder="age" />
+					<input value={age} onChange={setAge} onKeyPress={appKeyPress} placeholder="age" />
 				</div>
 				<div>
-					<input value={phoneNumber} onChange={onChangePhoneNumber} onKeyPress={appKeyPress} placeholder="phoneNumber" />
+					<input value={phoneNumber} onChange={setPhoneNumber} onKeyPress={appKeyPress} placeholder="phoneNumber" />
 				</div>
 				<button className="btn" onClick={addItem}>입력</button>
 			</div>
