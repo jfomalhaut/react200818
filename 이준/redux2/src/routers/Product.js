@@ -29,7 +29,7 @@ const Product = () => {
 							<button className="delete">담기</button>
 						</div>
 						<div className="checkbox">
-							<span className={check ? 'active' : ''}>
+							<span className={item.check ? 'active' : ''}>
 								<GoCheck />
 							</span>
 						</div>
