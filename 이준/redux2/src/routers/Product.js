@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LIST from '../jsons/fishes.json';
+import { GoCheck } from 'react-icons/go';
 
 const Product = () => {
 	const [list, setList] = useState([]);
@@ -24,12 +25,12 @@ const Product = () => {
 						<div className="info">
 							<div className="name">{item.name}</div>
 							<div className="price">{item.price}원</div>
-							<button>삭제</button>
-							<button>담기</button>
+							<button className="delete">삭제</button>
+							<button className="delete">담기</button>
 						</div>
 						<div className="checkbox">
-							<span className="">
-								{/* <GorCheck /> */}
+							<span className={check ? 'active' : ''}>
+								<GoCheck />
 							</span>
 						</div>
 					</div>
