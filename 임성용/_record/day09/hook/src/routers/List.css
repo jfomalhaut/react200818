@@ -1,0 +1,44 @@
+.item {
+	position: relative;
+	border: 1px solid #ddd;
+	box-shadow: 0 0 15px rgba(0,0,0, .2);
+}
+.info {
+	padding: 10px;
+}
+button {
+	width: 100%;
+	text-align: center;
+	padding: 5px 0;
+	border: none;
+	outline: none;
+	user-select: none;
+}
+button:hover {
+	background: #eaeaea;
+}
+button:active {
+	background: #bbb;
+}
+.checkbox {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #ddd;
+	position: relative;
+	margin-bottom: 20px;
+	position: absolute;
+	background: white;
+	left: 10px;
+	top: 10px;
+}
+
+.checked:after {
+	content: "";
+	position: absolute;
+	left: 50%; top: 50%;
+	transform: translate(-50%, -50%);
+	width: 15px;
+	height: 15px;
+	background: rgb(58, 58, 104);
+}

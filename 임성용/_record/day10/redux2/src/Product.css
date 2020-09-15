@@ -1,0 +1,80 @@
+.container{
+	margin: 50px auto;
+	width: 800px;
+}
+.count{
+	color: #C9242B;
+	font-size: 15px;
+}
+.pricePerCount{
+	font-size: 12px;
+}
+.options {
+	margin-bottom: 20px;
+}
+h1{
+	letter-spacing: -1px;
+	margin-bottom: 20px;
+	color: #666;
+	font-weight: 600;
+}
+button {
+	font-size: 18px;
+	margin-right: 10px;
+	padding: 2px 5px;
+}
+button.delete{
+	margin-top: 20px;
+}
+.list {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px;
+}
+.item {
+	display: flex;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+	background-color: white;
+}
+.checkbox{
+	margin: 10px;
+}
+.checkbox span{
+	cursor: pointer;
+	border: 1px solid #ddd;
+	width: 25px;
+	height: 25px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	color: #ddd;
+	background-color: #f9f9f9;
+}
+
+.checkbox .active{
+	color: #f9f9f9;
+	background-color: #C9242B;
+	border: none;
+}
+.img {
+	width: 150px;
+}
+.img img{
+	vertical-align: middle;
+	width: 100%;
+}
+.info {
+	flex-grow: 1;
+	padding: 30px;
+	color: #666;
+}
+.name {
+	letter-spacing: -1px;
+	font-size: 19px;
+	color: black;
+	margin-bottom: 20px;
+}
+.price {
+	font-size: 17px;
+}
