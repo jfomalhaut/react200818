@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import LIST from '../jsons/fishes.json';
 import { GoCheck } from 'react-icons/go';
 import { useDispatch } from 'react-redux';
+import { addCart } from '../reducer/CartReducer';
 
 const List = () => {
 	const dispatch = useDispatch();
@@ -18,8 +19,8 @@ const List = () => {
 		setList(after);
 	};
 
-	const addCart = item => {
-		dispatch({ type: 'ADD_CART', item });
+	const onAddCart = item => {
+		dispatch(addCart(item));
 	};
 
 	const addCartCheck = () => {
@@ -41,7 +42,7 @@ const List = () => {
 						<div className="info">
 							<div className="name">{item.name}</div>
 							<div className="price">{item.price}원</div>
-							<button className="delete" onClick={() => addCart(item)}>담기</button>
+							<button className="delete" onClick={() => onAddCart(item)}>담기</button>
 						</div>
 						<div className="checkbox">
 							<span className={item.check ? 'active' : ''} onClick={() => onCheck(item.id)}>
