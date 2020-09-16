@@ -16,6 +16,19 @@ export const removeAll = () => ({ type: REMOVE_ALL});
 const CartReducer = (state = [], {type, id, item}) => {
     switch (type) {
         case ADD_CART: {
+        // return state.concat({...item, count: 1});
+			const ids = state.map(child => child.id);
+			if (ids.indexOf(item.id) === -1) {
+				return state.concat({...item, count: 1});
+			} else {
+				// return state.map(child => child.id === item.id ? ({...child, count: child.count + 1}) : child);
+				return state.map(child => {
+					if (child.id === item.id) {
+						return ({ ...child, count: child.count + 1});
+					} else {
+						return child;
+					}
+				});
         //     const ids = state.map(item => item.id);
         //     // if(ids.indexOf(item.id) === -1){
         //     //     return state.concat(item);
@@ -23,6 +36,7 @@ const CartReducer = (state = [], {type, id, item}) => {
         //     //     return state;
         //     // }
         //    return ids.indexOf(item.id) === -1 ? state.concat(item) : state;
+            }
         }
 
         case REMOVE: {
